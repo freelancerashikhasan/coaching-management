@@ -22,7 +22,7 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
-            margin-top: 100px;
+            margin-top: 20px;
         }
         .log_sec p{
             color: #4B4B4B;
@@ -91,7 +91,6 @@
                             <img src="{{ asset('img/login_page.png') }}" alt="" style="margin-right: 100px;width:100%;">
                         </div>
                         <div class="col-md-6 col-sm-6 col-lg-6 log_sec">
-                            <x-validation-errors class="mb-4" />  <x-validation-errors class="mb-4" />
                           <form method="POST" action="{{ route('login') }}">
                             @csrf
                                   <div class="row">
@@ -122,7 +121,7 @@
                             </form>
                         </div>
                     </div>
-
+                    <x-validation-errors class="mb-4" />  <x-validation-errors class="mb-4" />
                 {{-- </div> --}}
             </div>
         </div>

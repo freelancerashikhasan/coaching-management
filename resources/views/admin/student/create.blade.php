@@ -20,8 +20,8 @@
                             <img class="student_image" src="{{ asset('img/student-img.png') }}" alt="">
                         </div>
                         <div class="pre-name">
-                            <h5 id="student_name">Md. Ismail Prodhan</h5>
-                            <p>ID : 123456789</p>
+                            <h5 id="student_name">Student Name</h5>
+                            <p>ID : <span id="pre_student_id"></span></p>
                         </div>
                     </div>
                     <div class="form-data pt-5">
@@ -92,7 +92,7 @@
                                         <div class="">
                                             <p for="name" class="form-label">Mothers Name</p>
                                             <input type="text" name="mother_name" id="mother_name" placeholder="Enter Your Mothers Name">
-                                            <span id="father_name_Error"></span>
+                                            <span id="mother_name_Error"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
@@ -166,14 +166,14 @@
                                     </div>
                                 </div>
                                 <div class="pdf_sec me-5">
-                                    <a onclick="triggerFileInputClick()">
+                                    <a onclick="triggerFileInputClick('nid_birth_input')">
                                         <div class="">
-                                            <p for="" class="form-label">Add birth/NID Pdf</p>
-                                            <div class="profile_pic">
-                                                <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                            <p for="" class="form-label">Add birth/NID (Pdf)</p>
+                                            <div class="profile_pic" id="nid_pic">
+                                                <img class="upload nidPdfImage" src="{{ asset('img/upload.svg') }}" alt="">
                                             </div>
-                                            <span id="date_Error"></span>
-                                            <input type="file" class="d-none" name="nid_birth_input" id="nid_birth_input" onchange="showPdfImage()">
+                                            <input type="file" class="d-none" name="nid_birth_input" id="nid_birth_input" onchange="showPdfImage('#nid_birth_input','#nid_pic')">
+                                            <span class="text-danger" id="nid_birth_input_Error"></span>
                                         </div>
                                     </a>
                                 </div>
@@ -201,42 +201,67 @@
                        </div>
                        <div class="d-flex mt-5">
                             <div class="pdf_sec me-5">
-                                <div class="">
-                                    <p for="" class="form-label">Add Transfer letter Pdf</p>
-                                    <div class="profile_pic">
-                                        <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                               <a  onclick="triggerFileInputClick('transfer_letter_input')">
+                                    <div class="">
+                                        <p for="" class="form-label">Add Transfer letter (Pdf*)</p>
+                                        <div class="profile_pic" id="transfer_pic">
+                                            <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                        </div>
+                                        <input type="file" class="d-none" name="transfer_letter_input" id="transfer_letter_input" onchange="showPdfImage('#transfer_letter_input','#transfer_pic')">
+                                        <span class="text-danger" id="transfer_letter_input_Error"></span>
                                     </div>
-                                    <span id="date_Error"></span>
-                                </div>
+                               </a>
                             </div>
                             <div class="pdf_sec me-5">
-                                <div class="">
-                                    <p for="" class="form-label">Add Transfer letter Pdf</p>
-                                    <div class="profile_pic">
-                                        <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                <a  onclick="triggerFileInputClick('marksheet_input')">
+                                    <div class="">
+                                        <p for="" class="form-label">Add Marksheet (Pdf*)</p>
+                                        <div class="profile_pic" id="marksheet_pic">
+                                            <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                        </div>
+                                        <input type="file" class="d-none" name="marksheet_input" id="marksheet_input" onchange="showPdfImage('#marksheet_input','#marksheet_pic')">
+                                        <span id="marksheet_input_Error"></span>
+                                        <span class="text-danger" id="marksheet_input_Error"></span>
                                     </div>
-                                    <span id="date_Error"></span>
-                                </div>
+                                </a>
                             </div>
                             <div class="pdf_sec me-5">
-                                <div class="">
-                                    <p for="" class="form-label">Add Fathers NID Pdf</p>
-                                    <div class="profile_pic">
-                                        <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                               <a  onclick="triggerFileInputClick('father_nid_input')">
+                                    <div class="">
+                                        <p for="" class="form-label">Add Fathers NID (Pdf)</p>
+                                        <div class="profile_pic" id="father_nid_pic">
+                                            <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                        </div>
+                                        <input type="file" class="d-none" name="father_nid_input" id="father_nid_input" onchange="showPdfImage('#father_nid_input','#father_nid_pic')">
+                                        <span class="text-danger" id="father_nid_input_Error"></span>
                                     </div>
-                                    <span id="date_Error"></span>
-                                </div>
+                               </a>
                             </div>
                             <div class="pdf_sec me-5">
-                                <div class="">
-                                    <p for="" class="form-label">Add Mothers NID Pdf</p>
-                                    <div class="profile_pic">
-                                        <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                <a  onclick="triggerFileInputClick('mother_nid_input')">
+                                    <div class="">
+                                        <p for="" class="form-label">Add Mothers NID (Pdf)</p>
+                                        <div class="profile_pic" id="mother_nid_pic">
+                                            <img class="upload" src="{{ asset('img/upload.svg') }}" alt="">
+                                        </div>
+                                        <input type="file" class="d-none" name="mother_nid_input" id="mother_nid_input" onchange="showPdfImage('#mother_nid_input','#mother_nid_pic')">
+                                        <span class="text-danger" id="mother_nid_input_Error"></span>
                                     </div>
-                                    <span id="date_Error"></span>
-                                </div>
+                                </a>
                             </div>
 
+                       </div>
+                       <div class="row mt-5">
+
+                            <input type="hidden" name="row_id" id="row_id">
+
+                            <div class="col-md-12" style="justify-content: space-between;">
+                                <button class="btn btn-primary me-2" onclick="addStudentData()">Save</button>
+                                <button class="btn btn-primary me-2 d-none" onclick="UpdateStudent()">Update</button>
+                                <button class="btn btn-success me-2">Save & print</button>
+                                <button class="btn btn-info me-2">Daft</button>
+
+                            </div>
                        </div>
                     </div>
                 </div>
@@ -253,6 +278,9 @@
     flatpickr("#date", {
         dateFormat: "d-m-Y",
 
+    });
+    $(document).ready(function() {
+        $('.select2').select2();
     });
 </script>
 @endpush

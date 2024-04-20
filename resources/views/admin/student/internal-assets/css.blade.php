@@ -71,6 +71,9 @@
         border-radius: 6px;
         border: 2px dashed var(--Gray-1, #A5A6A4);
     }
+    .error{
+        border: 4px dashed #ff0000 !important;
+    }
     .upload{
         width: 32px;
         height: 32px;

@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\DataTables\StudentDataTable;
+use App\Helpers\FileManager;
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -32,29 +35,122 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new User;
-        $data->name = $request->name;
-        $data->birth_certificate = $request->birth_certificate;
-        $data->father_name = $request->father_name;
-        $data->father_nid = $request->father_nid;
-        $data->father_phone = $request->father_phone;
-        $data->mother_name = $request->mother_name;
-        $data->mother_nid = $request->mother_nid;
-        $data->mother_phone = $request->mother_phone;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->class_id = $request->class_id;
-        $data->section_id = $request->section_id;
-        $data->discipline = $request->discipline_id;
-        $data->fee = $request->course_fee;
-        // $data->due = $request->payment;
-        // $data->payment = $request->payment;
-        $data->type = $request->course_type;
-        $data->password = Hash::make(12345678);
-        $data->show_password = '12345678';
-        $data->save();
-        flash('Your contact has been removed.');
-        return response()->json($data);
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'student_id' => 'required|string|max:50',
+            'roll' => 'required|string|max:50',
+            'department_id' => 'nullable|integer',
+            'father_name' => 'nullable|string|max:255',
+            'father_nid' => 'nullable|string|max:50',
+            'father_mobile' => 'nullable|string|max:20',
+            'father_occupation' => 'nullable|string|max:255',
+            'mother_name' => 'nullable|string|max:255',
+            'mother_nid' => 'nullable|string|max:50',
+            'mother_mobile' => 'nullable|string|max:20',
+            'mother_occupation' => 'nullable|string|max:255',
+            'student_mobile' => 'nullable|string|max:20',
+            'student_email' => 'nullable|email|max:255',
+            'class' => 'nullable|string|max:50',
+            'date' => 'nullable|date',
+            'nid_birth_input' => 'nullable|file|max:2048|mimes:pdf',
+            'gender' => 'nullable|string',
+            'transfer_letter_input' => 'nullable|file|max:2048|mimes:pdf',
+            'father_nid_input' => 'nullable|file|max:2048|mimes:pdf',
+            'mother_nid_input' => 'nullable|file|max:2048|mimes:pdf',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Example image validation
+            'marksheet_input' => 'nullable|file|max:2048|mimes:pdf',
+        ]);
+
+          $file = new FileManager();
+          if ($request->image) {
+              if ($request->image != null) {
+                  Storage::disk('student')->delete($request->image);
+              }
+              $photo = $request->image;
+              $file->folder('student')->prefix('student')->upload($photo) ? $image = $file->getName() : null;
+          } else {
+              $image = null;
+          }
+
+          if ($request->nid_birth_input) {
+              if ($request->nid_birth_input != null) {
+                  Storage::disk('student')->delete($request->nid_birth_input);
+              }
+              $photo2 = $request->nid_birth_input;
+              $file->folder('student')->prefix('student-nid-birth')->upload($photo2) ? $nid_birth = $file->getName() : null;
+          } else {
+              $nid_birth = null;
+          }
+
+          if ($request->transfer_letter_input) {
+              if ($request->transfer_letter_input != null) {
+                  Storage::disk('student')->delete($request->transfer_letter_input);
+              }
+              $photo3 = $request->transfer_letter_input;
+              $file->folder('student')->prefix('student-transfer_letter')->upload($photo3) ? $transfer_letter = $file->getName() : null;
+          } else {
+              $transfer_letter = null;
+          }
+          if ($request->marksheet_input) {
+              if ($request->marksheet_input != null) {
+                  Storage::disk('student')->delete($request->marksheet_input);
+              }
+              $photo3 = $request->marksheet_input;
+              $file->folder('student')->prefix('student-marksheet')->upload($photo3) ? $marksheet = $file->getName() : null;
+          } else {
+              $marksheet = null;
+          }
+
+          if ($request->father_nid_input) {
+              if ($request->father_nid_input != null) {
+                  Storage::disk('student')->delete($request->father_nid_input);
+              }
+              $photo4 = $request->father_nid_input;
+              $file->folder('student')->prefix('student-father-nid')->upload($photo4) ? $father_nid = $file->getName() : null;
+          } else {
+              $father_nid = null;
+          }
+
+          if ($request->mother_nid_input) {
+              if ($request->mother_nid_input != null) {
+                  Storage::disk('student')->delete($request->mother_nid_input);
+              }
+              $photo5 = $request->mother_nid_input;
+              $file->folder('student')->prefix('student-mother-nid')->upload($photo5) ? $mother_nid = $file->getName() : null;
+          } else {
+              $mother_nid = null;
+          }
+
+          $student = new Student();
+
+          // Assign values from validated request data to the Student instance
+          $student->name = $validatedData['name'];
+          $student->student_id = $validatedData['student_id'];
+          $student->roll = $validatedData['roll'];
+          $student->department_id = $validatedData['department_id'];
+          $student->father_name = $validatedData['father_name'];
+          $student->father_nid = $validatedData['father_nid'];
+          $student->father_mobile = $validatedData['father_mobile'];
+          $student->father_occupation = $validatedData['father_occupation'];
+          $student->mother_name = $validatedData['mother_name'];
+          $student->mother_nid = $validatedData['mother_nid'];
+          $student->mother_mobile = $validatedData['mother_mobile'];
+          $student->mother_occupation = $validatedData['mother_occupation'];
+          $student->mobile = $validatedData['student_mobile'];
+        //   $student->email = $validatedData['student_email'];
+          $student->class_id = $validatedData['class'];
+          $student->date = $validatedData['date'];
+          $student->image = $image;
+          $student->nid_birth = $nid_birth;
+          $student->gender = $validatedData['gender'];
+          $student->transfer_letter = $marksheet;
+          $student->father_nid = $father_nid;
+          $student->mother_nid = $mother_nid;
+
+
+          $student->save();
+          return response()->json('done');
+
     }
 
     /**
