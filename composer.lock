@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ee687e9173fc71957eb2217c047112f",
+    "content-hash": "afb00955e52b0c84fe31f84a5238b87a",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6925,16 +6925,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v10.11.1",
+            "version": "v10.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "6fb8571f9da39b8f256298e98bbcf6dd86900888"
+                "reference": "a11dc9cf5ec7f7dc68ad0d5959c5e7aec0af29a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/6fb8571f9da39b8f256298e98bbcf6dd86900888",
-                "reference": "6fb8571f9da39b8f256298e98bbcf6dd86900888",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/a11dc9cf5ec7f7dc68ad0d5959c5e7aec0af29a5",
+                "reference": "a11dc9cf5ec7f7dc68ad0d5959c5e7aec0af29a5",
                 "shasum": ""
             },
             "require": {
@@ -6947,9 +6947,9 @@
             },
             "require-dev": {
                 "algolia/algoliasearch-client-php": "^3.4",
+                "larastan/larastan": "^2.4",
                 "laravel/scout": "^10.5",
                 "meilisearch/meilisearch-php": "^1.4",
-                "nunomaduro/larastan": "^2.4",
                 "orchestra/testbench": "^8",
                 "yajra/laravel-datatables-html": "^9.3.4|^10"
             },
@@ -7000,7 +7000,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables/issues",
-                "source": "https://github.com/yajra/laravel-datatables/tree/v10.11.1"
+                "source": "https://github.com/yajra/laravel-datatables/tree/v10.11.4"
             },
             "funding": [
                 {
@@ -7008,7 +7008,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-25T13:00:21+00:00"
+            "time": "2024-02-28T05:00:23+00:00"
         }
     ],
     "packages-dev": [

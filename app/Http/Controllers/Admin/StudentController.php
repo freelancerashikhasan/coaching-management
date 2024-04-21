@@ -10,16 +10,70 @@ use App\Models\Student;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\Facades\DataTables;
 
 class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(StudentDataTable $dataTable)
+    public function index()
     {
+        $pageTitle = 'Student List';
+        if (request()->ajax()) {
+            $users = Student::where('deleted_at',null);
 
-        return view('admin.student.index');
+            return DataTables::of($users)
+            ->addColumn('action', function ($user) {
+                return '<a href="" class="btn btn-primary">Edit</a>';
+            })
+            ->addColumn('image', function ($user) {
+                if ($user->name == null) {
+                    $span = '<img style="width: 150px; border-radius: 80px; border: 3px dashed;" src="'.asset('img/user.png').'">';
+                }else{
+                    $span = '<img style="width: 150px; border-radius: 80px; border: 3px dashed;" src="'.asset('storage/student/'.$user->image).'">';
+                }
+                return $span;
+            })
+            ->addColumn('details', function ($user) {
+                $name = $user->name ?? '';
+                $father_name = $user->father_name ?? '';
+                $father_phone = $user->father_phone ?? '';
+                $class = $user->class ?? '';
+                $roll = $user->roll ?? '';
+                $table = <<<HTML
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="background-color: #403E3B; color: #FFF;">Name</td>
+                        <td>$name</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #403E3B; color: #FFF;">Father's Name</td>
+                        <td>$father_name</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #403E3B; color: #FFF;">Father's Phone</td>
+                        <td>$father_phone</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #403E3B; color: #FFF;">Class</td>
+                        <td>$class</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #403E3B; color: #FFF;">Roll</td>
+                        <td>$roll</td>
+                    </tr>
+                </table>
+                HTML;
+                return $table;
+            })
+            ->addColumn('download', function ($user) {
+                return $user->name;
+            })
+            ->rawColumns(['action','image','details'])
+            ->toJson();
+        }
+        return view('admin.student.index',compact('pageTitle'));
     }
 
     /**

@@ -78,4 +78,12 @@
 .border-danger{
     border: 1px solid red!important;
 }
+.data-table thead{
+    background-color: #403E3B !important;
+    color: #D9D8D7 !important;
+}
+.data-table tfoot{
+    background-color: #403E3B !important;
+    color: #D9D8D7 !important;
+}
 </style>

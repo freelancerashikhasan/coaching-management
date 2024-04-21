@@ -28,160 +28,65 @@
     <div class="section">
         <div class="row">
             <h5 class="leatest">Our Leatest Student</h5>
-
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
+            <div class="row table-responsive">
+                <table id="users-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Details</th>
+                            <th>Download</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3  mt-2">
-                <div class="student-card d-flex p-2">
-                    <div class="w-25">
-                        <img style="margin: 10px;" src="{{ asset('img/student.png') }}" alt="">
-                    </div>
-                    <div class="w-50">
-                        <span>Mohammad Ruhul Amin</span>
-                        <span style="justify-content: space-between;"><span>Class: 07</span><span  style="padding-left:20px;">Roll: 16</span></span>
-                        <span style="text-align: center;">ID: 12456TYUI</span>
-                    </div>
-                    <div class="w-25 text-center" style="justify-content: center !important;margin-top:20px;">
-                        <img src="{{ asset('icon/student3dot.svg') }}" alt="">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
 @endsection
+@push('script')
+    <script>
+        $(document).ready(function() {
+            $('#users-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.student.index') }}",
+                columns: [
+                    {
+                        data: 'image',
+                        name: 'image'
+                    },
+                    {
+                        data: 'details',
+                        name: 'details'
+                    },
+                    {
+                        data: 'download',
+                        name: 'download'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action'
+                    },
 
+                ],
+                dom: 'Bfrtip', // Enable buttons with custom placement
+                buttons: [
+                    'copy',
+                    {
+                        extend: 'excel',
+                        text: 'Export to Excel'
+                    },
+                    {
+                        extend: 'pdf',
+                        text: 'Export to PDF',
+                        filename: 'users_pdf',
+                        orientation: 'landscape',
+                        pageSize: 'A4'
+                    },
+                    'print'
+                ]
+            });
+        });
+    </script>
+@endpush
