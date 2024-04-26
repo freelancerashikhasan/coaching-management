@@ -101,7 +101,7 @@
                                         <div class="form" style="margin-top:50px;">
                                             <div class="mb-3 input-group d-flex">
                                                 <img class="icon" src="{{ asset('img/user.svg') }}" alt="">
-                                                <input type="text" class="form-control" name="email" id="text" placeholder="Username">
+                                                <input type="text" class="form-control" name="username" id="text" placeholder="Username">
                                             </div>
                                             <div class="mb-3 input-group">
                                                 <img class="icon" src="{{ asset('img/seen.svg') }}" alt="">

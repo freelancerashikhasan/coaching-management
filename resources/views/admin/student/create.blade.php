@@ -1,16 +1,19 @@
 @extends('layouts.admin.app')
 @section('content')
-<head>
-
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" type="text/css" media="all">
-
-</head>
 @push('css')
     @include('admin.student.internal-assets.css')
 @endpush
+
+  <div class="breadcumb" style="padding: 30px 25px;">
+    {!! modal('student') !!}
+  </div>
+
     <div class="contetent" style="padding-bottom:100px;">
         <div class="title">
-            <p>Add New Student</p>
+            <p>Add New Student <br>
+            <img class="line" style="width: 147px;" src="{{ asset('icon/hr.svg') }}" alt="">
+
+            </p>
         </div>
         <div class="form">
             <div class="row">
@@ -37,20 +40,6 @@
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
                                         <div class="">
-                                            <p for="" class="form-label">Student ID</p>
-                                            <input type="text" name="student_id" id="student_id" placeholder="12345678">
-                                            <span id="student_id_Error"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
-                                        <div class="">
-                                            <p for="" class="form-label">Class Roll</p>
-                                            <input type="text" name="roll" id="roll" placeholder="012">
-                                            <span id="roll_Error"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
-                                        <div class="">
                                             <p for="" class="form-label">Department</p>
                                             <select name="department_id" class="select2" id="department_id">
                                                 <option value="">Science</option>
@@ -59,6 +48,28 @@
                                             </select>
                                         </div>
                                         <span id="department_id_Error"></span>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
+                                        <div class="">
+                                            <p for="" class="form-label">Class</p>
+                                            <select name="class_id" class="select2" id="class_id">
+                                                <option value="1">1st Year</option>
+                                                <option value="2">2nd Year</option>
+                                                <option value="3">3rd Year</option>
+                                            </select>
+                                        </div>
+                                        <span id="class_id_Error"></span>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
+                                        <div class="">
+                                            <p for="" class="form-label">Section</p>
+                                            <select name="section_id" class="select2" id="section_id">
+                                                <option value="">A</option>
+                                                <option value="">B</option>
+                                                <option value="">C</option>
+                                            </select>
+                                        </div>
+                                        <span id="section_id_Error"></span>
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
                                         <div class="">
@@ -130,11 +141,12 @@
                                             <span id="student_email_Error"></span>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
                                         <div class="">
-                                            <p for="" class="form-label">Student Class</p>
-                                            <input type="text" name="class" id="class" placeholder="Class">
-                                            <span id="class_Error"></span>
+                                            <p for="" class="form-label">Class Roll</p>
+                                            <input type="text" name="roll" id="roll" placeholder="012">
+                                            <span id="roll_Error"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-sm-6 pt-2">
@@ -268,8 +280,8 @@
             </div>
         </div>
     </div>
-
-
+    @include('admin.department.modal')
+    @include('admin.section.modal')
 @endsection
 @push('script')
     @include('admin.student.internal-assets.js')
@@ -279,9 +291,7 @@
         dateFormat: "d-m-Y",
 
     });
-    $(document).ready(function() {
-        $('.select2').select2();
-    });
+
 </script>
 @endpush
 

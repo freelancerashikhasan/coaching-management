@@ -86,4 +86,32 @@
     background-color: #403E3B !important;
     color: #D9D8D7 !important;
 }
+.select2-selection__arrow{
+    margin-top: 8px !important;
+}
+.selection{
+    margin-top: -10px !important;
+}
+.dreadcumb-btn{
+    /* display: flex; */
+    color: var(--Gray-1, #A5A6A4);
+    font-family: Lexend;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* height: 38px; */
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    background: var(--gray-20, #D9D8D7);
+    width: 165px;
+}
+.dreadcumb-btn:hover{
+    background: var(--Gray-1, #403E3B);
+    color: var(--White, #F2F2F2);
+    font-weight: 600;
+}
 </style>

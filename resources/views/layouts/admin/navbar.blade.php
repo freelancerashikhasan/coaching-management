@@ -49,6 +49,13 @@
     .add_btn:hover{
         color: #fff;
     }
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Adjust the z-index as needed */
+    }
     @media (max-width: 768px) {
             /* Additional styles for smaller devices */
 
@@ -84,7 +91,7 @@
     }
 </style>
 
-<nav class="main-header navbar navbar-expand-md navbar-white navbar-light" style="height: 70px; background-color: #FFF;">
+<nav class="main-header navbar navbar-expand-md navbar-white navbar-light  fixed-top" style="height: 70px; background-color: #FFF;">
     <a class="nav-link sidebar-icon" data-widget="pushmenu" href="#" role="button"><img src="{{ asset('icon/3bars.svg') }}" alt=""></i></a>
     <button style="position: absolute;right: 20px !important;" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

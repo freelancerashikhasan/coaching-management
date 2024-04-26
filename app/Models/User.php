@@ -26,20 +26,16 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
         'show_password',
-        'birth_certificate',
-        'father_nid',
-        'father_name',
-        'mother_nid',
-        'mother_phone',
-        'show_password',
-        'show_password',
-        'show_password',
-        'show_password',
-        'show_password',
-        'show_password',
-        'show_password',
+        'student_id',
+        'status',
+        'type',
+        'created_by',
+        'updated_by',
+        'deleted_by',
+
     ];
 
     /**
@@ -71,4 +67,7 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function findForPassport($username) {
+        return $this->where('username', $username)->first();
+    }
 }

@@ -15,10 +15,7 @@
     @include('layouts.admin.navbar')
 
   @include('layouts.admin.sidebar')
-  <div class="content-wrapper">
-  <div class="content-header">
-
-    </div>
+  <div class="content-wrapper" style="padding-top: 100px !important;">
     <section class="content">
       <div class="container-fluid">
             @yield('content')

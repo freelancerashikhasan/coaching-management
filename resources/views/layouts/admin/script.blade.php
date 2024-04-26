@@ -40,6 +40,12 @@
     function info_msg(message) {
         flasher['info'](message, { timeout: 1500 });
     }
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $('.select2').select2();
+    });
 
 
 </script>
