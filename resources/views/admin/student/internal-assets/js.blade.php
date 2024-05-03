@@ -1,4 +1,9 @@
 <script>
+    $(document).ready(function(){
+        fetchDepartments();
+        fetchSections();
+        fetchClasses();
+    });
     $('#name').on('input', function(){
         setTimeout(() => {
             let data = $('#name').val();

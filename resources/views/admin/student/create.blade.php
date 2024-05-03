@@ -42,9 +42,9 @@
                                         <div class="">
                                             <p for="" class="form-label">Department</p>
                                             <select name="department_id" class="select2" id="department_id">
-                                                <option value="">Science</option>
+                                                {{-- <option value="">Science</option>
                                                 <option value="">Arts</option>
-                                                <option value="">Commerce</option>
+                                                <option value="">Commerce</option> --}}
                                             </select>
                                         </div>
                                         <span id="department_id_Error"></span>
@@ -53,9 +53,9 @@
                                         <div class="">
                                             <p for="" class="form-label">Class</p>
                                             <select name="class_id" class="select2" id="class_id">
-                                                <option value="1">1st Year</option>
+                                                {{-- <option value="1">1st Year</option>
                                                 <option value="2">2nd Year</option>
-                                                <option value="3">3rd Year</option>
+                                                <option value="3">3rd Year</option> --}}
                                             </select>
                                         </div>
                                         <span id="class_id_Error"></span>
@@ -64,9 +64,9 @@
                                         <div class="">
                                             <p for="" class="form-label">Section</p>
                                             <select name="section_id" class="select2" id="section_id">
-                                                <option value="">A</option>
+                                                {{-- <option value="">A</option>
                                                 <option value="">B</option>
-                                                <option value="">C</option>
+                                                <option value="">C</option> --}}
                                             </select>
                                         </div>
                                         <span id="section_id_Error"></span>
@@ -282,8 +282,10 @@
     </div>
     @include('admin.department.modal')
     @include('admin.section.modal')
+    @include('admin.class.modal')
 @endsection
 @push('script')
+    @include('layouts.admin.select2')
     @include('admin.student.internal-assets.js')
 <script>
 

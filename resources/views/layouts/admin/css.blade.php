@@ -107,11 +107,71 @@
     gap: 15px;
     border-radius: 6px;
     background: var(--gray-20, #D9D8D7);
-    width: 165px;
+    /* width: 165px; */
 }
 .dreadcumb-btn:hover{
     background: var(--Gray-1, #403E3B);
     color: var(--White, #F2F2F2);
     font-weight: 600;
 }
+.title p{
+        color: var(--Dark-Gray, #403E3B);
+        font-family: 'Lexend' , 'sans-serif' !important;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-bottom: 20px;
+    }
+    .pre-name{
+        padding-left: 23px;
+        padding-top: 10px;
+
+    }
+    .pre-name h5{
+        color: var(--Dark-Gray, #403E3B);
+        font-family: Lexend;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .pre-name p{
+        color: var(--Gray-1, #A5A6A4);
+        font-family: Lexend;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .form-lable{
+        color: var(--Dark-Gray, #403E3B);
+        font-family: Lexend;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    input{
+        border-radius: 6px;
+        background: var(--gray-20, #D9D8D7);
+        display: flex;
+        width: 100%;
+        height: 46px;
+        padding: 10px 10px 10px 22px;
+        align-items: center;
+        gap: 10px;
+        border: none !important;
+    }
+    select{
+        border-radius: 6px;
+        background: var(--gray-20, #D9D8D7);
+        display: flex;
+        width: 100%;
+        height: 46px;
+        padding: 10px 10px 10px 22px;
+        align-items: center;
+        gap: 10px;
+        border: none !important;
+    }
 </style>

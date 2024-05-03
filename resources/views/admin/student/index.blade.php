@@ -25,9 +25,12 @@
         }
 
     </style>
+      <div class="breadcumb" style="padding: 30px 25px;">
+        {!! modal('student') !!}
+      </div>
     <div class="section">
         <div class="row">
-            <h5 class="leatest">Our Leatest Student</h5>
+            <h5 class="leatest my-2">Our Leatest Student</h5>
             <div class="row table-responsive">
                 <table id="users-table" class="data-table">
                     <thead>
@@ -42,7 +45,9 @@
             </div>
         </div>
     </div>
-
+    @include('admin.department.modal')
+    @include('admin.section.modal')
+    @include('admin.class.modal')
 @endsection
 @push('script')
     <script>
